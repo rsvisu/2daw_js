@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicios_formularios_2</title>
+    <style>
+        #ej1 > button {
+            margin: 4px;
+        }
+        
+        #ej5 > input {
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ejercicios_formularios_2</h1>
+    
+    <h2>Ejercicio 1:</h2>
+    
+    <h3>Resultado:</h3>
+
+    <div id="ej1">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>/</button>
+
+        <br>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+
+        <br>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+
+        <br>
+
+        <button>0</button>
+        <button>&nbsp; = &nbsp;</button>
+        <button>-</button>
+    </div>
+
+    <h2>Ejercicio 2:</h2>
+
+    <form action="/enviardatos.php" method="get">
+    
+        <label> Ingrese su nombre:
+        <input type="text" name="nombre"></label><br>
+    
+        <label> Seleccione la foto:
+        <input type="file" name="foto"></label><br>
+    
+        <input type="submit" value="Enviar">
+    
+    </form>
+
+    <h2>Ejercicio 3:</h2>
+
+    <form action="/enviardatos.php" method="get">
+        <fieldset>
+            <legend>
+                Datos personales:
+            </legend>
+            <label> Apellidos y nombre:
+            <input type="text" name="nombre_personal"></label><br>
+            <label> Documento de indentidad:
+            <input type="text" name="dni_personal"></label><br>
+            <label> Fecha de nacimiento:
+            <input type="date" name="fecha-nacimiento_personal"></label><br>
+            <label> Direccion:
+            <input type="text" name="direccion_personal"></label><br>
+        </fieldset>
+        
+        <br>
+
+        <fieldset>
+            <legend>
+                Datos laborales:
+            </legend>
+            <label> Nombre de la empresa:
+            <input type="text" name="nombre_empresa"></label><br>
+            <label> Actividad:
+            <input type="text" name="actividad_empresa"></label><br>
+            <label> Direccion:
+            <input type="text" name="direccion_empresa"></label><br>
+        </fieldset>
+        
+        <br>
+
+        <input type="submit" value="Enviar">
+    
+    </form>
+
+    <h2>Ejercicio 4:</h2>
+
+    <form action="/enviardatos.php" method="get">
+    
+        <label> Apellidos y nombre:
+        <input type="text" name="nombre"></label><br>
+        
+        <p>¿Es mayor de edad?</p>
+        <label><input type="radio" name="mayor-edad" value="Si" checked="checked">Si<br></label>
+        <label><input type="radio" name="mayor-edad" value="No">No<br></label><br>
+        
+        <label> Telefono:
+        <input type="text" name="telefono" value="453-"></label><br><br>
+        
+        <textarea name="comentarios" cols="50" rows="10">Ingrese aqui sus comentarios:</textarea><br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+<h2>Ejercicio 5:</h2>
+
+    <div id="ej5">
+        <input type="text" tabindex="1">
+        <input type="text" tabindex="4">
+        <input type="text" tabindex="7">
+
+        <br>
+
+        <input type="text" tabindex="2">
+        <input type="text" tabindex="5">
+        <input type="text" tabindex="8">
+
+        <br>
+
+        <input type="text" tabindex="3">
+        <input type="text" tabindex="6">
+        <input type="text" tabindex="9">
+    </div>
+
+    <h2>Ejercicio 6:</h2>
+
+    <form action="/enviardatos.php" method="get">
+        <p>¿Que eres?</p>
+        <label><input type="radio" name="edad" value="ninos" disabled="disabled">Niños<br></label>
+        <label><input type="radio" name="edad" value="adolescentes">Adolescentes<br></label>
+        <label><input type="radio" name="edad" value="mayores">Mayores<br></label><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h2>Ejercicio 7:</h2>
+
+    <form action="/enviardatos.php" method="post">
+        <label>Nombre de usuario:
+        <input type="text" name="usuario" maxlength="20"></label><br>
+        
+        <label>Clave:
+        <input type="password" name="clave" maxlength="12"></label><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h2>Ejercicio 8:</h2>
+
+    <form action="/enviardatos.php" method="get">
+    
+        <label> Nombre de la empresa:
+        <input type="text" name="empresa" value="Robert S.A." readonly="readonly"></label><br>
+        
+        <textarea name="contrato" cols="60" rows="8" readonly="readonly">Texto del contrato</textarea><br>
+
+        <input type="submit" value="Enviar">
+    
+    </form>
+
+    <h2>Ejercicio 9:</h2>
+
+    <h3>Reclamos</h3>
+
+    <form action="/enviardatos.php" method="post">
+    
+        <label> Ingrese su nombre:
+        <input type="text" name="nombre"></label><br>
+        
+        <label> Ingrese su dirección:
+        <input type="text" name="direccion"></label><br>
+        
+        <label> Informe del problema:<br>
+        <textarea name="comentario" cols="60" rows="8"></textarea></label><br>
+        
+        <input type="submit" value="Enviar">
+    
+    </form>
+
+    <h2>Ejercicio 10:</h2>
+
+    <form action="/enviardatos.php" method="post">
+        
+    <fieldset>
+        <legend>
+            Formulario de comentarios:
+        </legend>
+        <label> Ingrese su nombre:
+        <input type="text" name="nombre"></label><br>
+        
+        <label> Ingrese su mail:
+        <input type="email" name="email"></label><br>
+        
+        <label> Comentarios:<br>
+        <textarea name="comentario" cols="60" rows="8"></textarea></label><br>
+        
+        <input type="submit" value="Enviar">
+    </fieldset>
+    
+    </form>

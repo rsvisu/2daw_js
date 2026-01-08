@@ -1,0 +1,1 @@
+alert("Prueba de Javascript desde archivo externo")

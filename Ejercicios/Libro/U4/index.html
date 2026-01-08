@@ -1,0 +1,35 @@
+<!--
+Adivina la palabra
+Escribe una función que, a partir de una palabra establecida por el programador, reciba
+como parámetros un número variable de letras y muestre en pantalla solo las coincidencias
+entre la palabra secreta y las letras proporcionadas.
+Por ejemplo, si la palabra secreta establecida es «sargento» y se ha invocado a la función
+como adivina('a','e','i','o','u','d','n'), la salida del programa debe ser -a--en-o.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Adivina la palabra:</h1>
+    <form id="formulario">
+        <label for="entrada">Letras de la palabra:</label><br>
+        <input type="text" id="entrada"><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <hr>
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

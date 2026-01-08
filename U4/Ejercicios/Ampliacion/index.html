@@ -1,0 +1,49 @@
+<!--
+1) Gestión de Presupuesto y Gastos: Desarrolla un módulo en JavaScript que permita gestionar un presupuesto y crear objetos relacionados con gastos personales. El ejercicio consiste en implementar las funcionalidades descritas a continuación, siguiendo buenas prácticas de programación y empleando funciones y constructores.
+
+- Presupuesto global. Debe existir una variable global destinada a almacenar el presupuesto total disponible.
+
+Implementa la función: actualizarPresupuesto(pres)
+
+Recibe un valor numérico.
+
+Si el valor es mayor o igual que 0, debe actualizar el presupuesto y devolver el nuevo valor.
+
+Si el valor es negativo, debe devolver -1 sin modificar el presupuesto.
+
+ - Mostrar presupuesto: mostrarPresupuesto()
+
+Debe retornar una cadena de texto que muestre el presupuesto actual con el formato exacto: Tu presupuesto actual es de X €
+
+ - Constructor de gastos: Implementa una función constructora llamada CrearGasto(descripcion, valor, fecha, ...etiquetas) que permita crear objetos gasto con las siguientes características:
+
+Propiedades obligatorias
+
+descripcion: texto que indique a qué corresponde el gasto.
+
+valor: cantidad económica del gasto. Si el valor recibido es negativo, debe almacenarse como 0.
+
+Métodos del objeto gasto. Cada objeto creado mediante el constructor debe incluir los métodos:
+
+mostrarGasto(): Devuelve una cadena con el formato: Gasto correspondiente a [descripcion] con valor [valor] €.
+
+actualizarDescripcion(desc): Modifica la descripción del gasto. actualizarValor(valor): Actualiza el valor del gasto solo si el nuevo valor es mayor o igual a 0.
+
+Exportación del módulo: mostrarPresupuesto, actualizarPresupuesto y CrearGasto
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Pruebas:</h3>
+    <button id="btn-presupuesto">Presupuesto</button><br><br>
+    <button id="btn-gastos">Gastos</button>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

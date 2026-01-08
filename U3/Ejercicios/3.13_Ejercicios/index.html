@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Calculadora ejercicio 9 y ampliacion*/
+        #calculadora_ej9,
+        #calculadora_ej9_ampliacion {
+            border: 1px black solid;
+            width: fit-content;
+            padding: 10px;
+        }
+
+        #resultado_ej9,
+        #resultado_ej9_ampliacion {
+            width: 100%;
+            height: 30px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        #calculadora_ej9 button,
+        #calculadora_ej9_ampliacion button {
+            width: 50px;
+            height: 30px;
+            margin: 1px;
+        }
+
+        #calculadora_ej9 button.relleno,
+        #calculadora_ej9_ampliacion button.relleno {
+            opacity: 0;
+        }
+
+        /* Historial calculadora ejercicio 9 ampliacion y ampliacion*/
+        #calculadora_ej9_ampliacion {
+            display: inline-block;
+        }
+
+        #historialCalculadora_ej9_ampliacion {
+            margin-left: 10px;
+            display: inline-block;
+            height: 200px;
+            margin-bottom: 0;
+            padding: 10px;
+            border: 1px black solid;
+            vertical-align: top;
+        }
+
+        #historialCalculadora_ej9_ampliacion h3 {
+            margin: 5px auto;
+        }
+
+        #historialCalculadora_textarea_ej9_ampliacion {
+            border: 1px black solid;
+            height: 165px;
+            width: 250px;
+            background-color: whitesmoke;
+            overflow: hidden;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Ejercicios</h1>
+
+        <h2>Ejercicio 1</h2>
+        <button onclick="ej1()">Ejecutar</button>
+
+        <hr>
+
+        <h2>Ejercicio 2</h2>
+        <button onclick="ej2()">Ejecutar</button>
+
+        <hr>
+
+        <h2>Ejercicio 3</h2>
+        <button onclick="ej3()">Ejecutar</button>
+
+        <p id="ej3_resultado"></p>
+
+        <hr>
+
+        <h2>Ejercicio 4</h2>
+        <button onclick="ej4()">Ejecutar</button>
+
+        <hr>
+
+        <h2>Ejercicio 4 Ampliacion</h2>
+        <button onclick="ej4_ampliacion()">Ejecutar</button>
+
+        <hr>
+
+        <h2>Ejercicio 5</h2>
+        <button onclick="ej5()">Ejecutar</button>
+
+        <hr>
+
+        <h2>Ejercicio 6</h2>
+        <button onclick="ej6()">Ejecutar</button>
+
+        <hr>
+
+        <h2>Ejercicio 7</h2>
+        <button onclick="ej7()">Ejecutar</button>
+
+        <hr>
+
+        <h2>Ejercicio 8</h2>
+        <button onclick="ej8()">Ejecutar</button>
+
+        <hr>
+
+        <h2>Ejercicio 9</h2>
+        <div id="calculadora_ej9">
+            <input type="text" id="resultado_ej9" readonly>
+
+            <br>
+
+            <button onclick="ej9('7')">7</button>
+            <button onclick="ej9('8')">8</button>
+            <button onclick="ej9('9')">9</button>
+            <button onclick="ej9('/')">/</button>
+
+            <br>
+
+            <button onclick="ej9('4')">4</button>
+            <button onclick="ej9('5')">5</button>
+            <button onclick="ej9('6')">6</button>
+            <button onclick="ej9('*')">*</button>
+
+            <br>
+
+            <button onclick="ej9('1')">1</button>
+            <button onclick="ej9('2')">2</button>
+            <button onclick="ej9('3')">3</button>
+            <button onclick="ej9('+')">+</button>
+
+            <br>
+
+            <button onclick="ej9('0')">0</button>
+            <button onclick="ej9('del')">◄</button>
+            <button onclick="ej9('=')">=</button>
+            <button onclick="ej9('-')">-</button>
+
+        </div>
+
+        <hr>
+
+        <h2>Ejercicio 9 Ampliacion</h2>
+        <div>
+            <div id="calculadora_ej9_ampliacion">
+                <input type="text" id="resultado_ej9_ampliacion" readonly>
+
+                <br>
+
+                <button onclick="ej9_ampliacion('7')">7</button>
+                <button onclick="ej9_ampliacion('8')">8</button>
+                <button onclick="ej9_ampliacion('9')">9</button>
+                <button onclick="ej9_ampliacion('/')">/</button>
+
+                <br>
+
+                <button onclick="ej9_ampliacion('4')">4</button>
+                <button onclick="ej9_ampliacion('5')">5</button>
+                <button onclick="ej9_ampliacion('6')">6</button>
+                <button onclick="ej9_ampliacion('*')">*</button>
+
+                <br>
+
+                <button onclick="ej9_ampliacion('1')">1</button>
+                <button onclick="ej9_ampliacion('2')">2</button>
+                <button onclick="ej9_ampliacion('3')">3</button>
+                <button onclick="ej9_ampliacion('+')">+</button>
+
+                <br>
+
+                <button onclick="ej9_ampliacion('0')">0</button>
+                <button onclick="ej9_ampliacion('-')">-</button>
+                <button onclick="ej9_ampliacion('√')">√</button>
+                <button onclick="ej9_ampliacion('del')">◄</button>
+
+                <br>
+                <button class="relleno">Relleno</button>
+                <button class="relleno">Relleno</button>
+                <button class="relleno">Relleno</button>
+                <button onclick="ej9_ampliacion('=')">=</button>
+
+            </div>
+
+            <div id="historialCalculadora_ej9_ampliacion" readonly>
+                <h3>Historial:</h3>
+                <textarea id="historialCalculadora_textarea_ej9_ampliacion" readonly></textarea>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

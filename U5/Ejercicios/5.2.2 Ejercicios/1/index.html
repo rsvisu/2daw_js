@@ -1,0 +1,44 @@
+<!--
+Realiza una aplicación relacionada con este módulo, que inicialmente esté
+cargada con una imagen y mediante un script, se le incorpore la funcionalidad de
+cambiar dicha imagen. Este proceso se realizará mediante el paso del ratón por encima
+del elemento. En el momento que se retira el ratón, la imagen cambiará por la inicial.
+
+Nota: Aplicar el evento onmouseover, para reconocer la imagen por parte del ratón,
+Aplicar onmouseout para contemplar el caso en el que el ratón se encuentra fuera de la
+imagen.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #imagenes img {
+        width: 400px;
+        height: auto;
+      }
+    </style>
+</head>
+<body>
+    <main>
+      <div id="imagenes">
+        <h2>Tarjeta Flip Imagen</h2>
+        <img src="assets/carretera.jpg" alt="Carretera">
+        <img src="assets/panda.png" alt="Panda">
+      </div>
+    </main>
+</body>
+</html>

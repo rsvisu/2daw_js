@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicios_formularios_1</title>
+</head>
+<body>
+    <h1>ejercicios_formularios_1</h1>
+
+    <h2>Ejercicio 1:</h2>
+    <form action="/enviardatos.php" method="get">
+        
+        <label> Ingrese su nombre:
+        <input type="text" name="nombre"></label><br>
+
+        <p>Seleccione los lenguajes que conoce: </p>
+        <label><input type="checkbox" name="lenguajes" value="Java">Java</label><br>
+        <label><input type="checkbox" name="lenguajes" value="C++">C++</label><br>
+        <label><input type="checkbox" name="lenguajes" value="C">C</label><br>
+        <label><input type="checkbox" name="lenguajes" value="C#">C#</label><br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+    <h2>Ejercicio 2:</h2>
+    <form action="/enviardatos.php" method="get">
+        
+        <label> Ingrese su nombre:
+        <input type="text" name="nombre"></label><br>
+
+        <label> Ingrese su mail:
+        <input type="email" name="email"></label><br>
+
+        <label> Comentarios:
+        <br><textarea name="comentarios"></textarea></label><br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+    <h2>Ejercicio 3:</h2>
+    <form action="/enviardatos.php" method="get">
+
+        <label> Ingrese su nombre:
+        <input type="text" name="nombre"></label><br>
+
+        <p> Seleccione el maximo nivel de estudios que tiene:</p>
+        <label><input type="radio" name="estudios" value="sin_estudios">Sin estudios<br></label>
+        <label><input type="radio" name="estudios" value="primario">Primario<br></label>
+        <label><input type="radio" name="estudios" value="secundario">Secundario<br></label>
+        <label><input type="radio" name="estudios2" value="universitario">Universitario<br></label>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+    <h2>Ejercicio 4:</h2>
+    <form action="/enviardatos.php" method="get">
+    
+        <label> Seleccione uno o varios colores (Presione Ctrl para seleccionar varios colores):
+            <br>
+            <select name="colores" multiple>
+                <option value="rojo">Rojo</option>
+                <option value="verde">Verde</option>
+                <option value="azul">Azul</option>
+                <option value="amarillo">Amarillo</option>
+            </select>
+        </label><br>
+
+        <input type="submit" value="Enviar">
+    
+    </form>
+
+    <h2>Ejercicio 5:</h2>
+    <form action="/enviardatos.php" method="get">
+    
+        <label> Seleccione una fruta o verdura:
+            <select name="fruta_o_verdura">
+                <optgroup label="Frutas">
+                    <option value="naranjas" selected>Naranjas</option>
+                    <option value="manzanas">Manzanas</option>
+                    <option value="frutilla">Frutilla</option>
+                    <option value="durazno">Durazno</option>
+                    <option value="ciruela">Ciruela</option>
+                </optgroup>
+                <optgroup label="Verduras">
+                    <option value="lechuga">Lechuga</option>
+                    <option value="acelga">Acelga</option>
+                    <option value="zapallo">Zapallo</option>
+                    <option value="papas">Papas</option>
+                    <option value="batatas">Batatas</option>
+                    <option value="zanahorias">Zanahorias</option>
+                    <option value="rabanitos">Rabanitos</option>
+                    <option value="calabaza">Calabaza</option>
+                </optgroup>
+            </select>
+        </label><br>
+    
+        <input type="submit" value="Enviar">
+    
+    </form>
+
+</body>
+</html>

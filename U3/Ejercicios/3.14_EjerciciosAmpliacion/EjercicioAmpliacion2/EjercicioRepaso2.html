@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="formulario">
+        <textarea name="mitexto" placeholder="Introduce una frase" cols="30" rows="5"></textarea>
+        <br>
+        <input type="button" value="clickear" onclick="pulsar()"></input>
+    </form>
+    <h2>Palabras:</h2>
+    <div id="palabras"></div>
+    <h2>Calificaciones:</h2>
+    <div id="calificaciones"></div>
+    <script>
+
+        /* Para el div palabras:
+        - Calcula y muestra el numero de palabras que están escritas en el textarea
+        - Muestra la ultima y la primera palabra del textarea
+        */
+
+        function pulsar() {
+            // Referencias a los elementos HTML.
+            const i_miTexto = document.getElementsByName("mitexto")[0];
+            const r_palabras = document.getElementById("palabras");
+
+            // Separamos el contenido de mitexto a partir de los espacios 
+            // (eliminando antes los espacios iniciales y finales).
+            let listaMiTexto = i_miTexto.value.trim().split(" ");
+
+            // Contamos los elementos que no son en blanco.
+            let numPalabras = 0;
+            for (const element of listaMiTexto) {
+                // Si el elemento no esta vacio aumentamos el contador.
+                if (element.trim() !== "") {
+                    numPalabras++;
+                }
+            }
+
+            // Obtenemos la primera palabra.
+            let primeraPalabra = listaMiTexto[0];
+
+            // Obtenemos la ultima palabra.
+            let ultimaPalabra = listaMiTexto.at(-1);
+
+            // Mostramos los resultados.
+            let html =
+                `
+                <h3>Numero de palabras:</h3>
+                <p>${numPalabras}</p>
+                <h3>Primera palabra:</h3>
+                <p>${primeraPalabra}</p>
+                <h3>Ultima palabra:</h3>
+                <p>${ultimaPalabra}</p>
+                `;
+
+            r_palabras.innerHTML = html;
+
+            console.log(listaMiTexto);
+        }
+
+        /* Para el div calificaciones: 
+        Dado el siguiente array de notas de clase en la 1ª Evaluación. 
+        var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
+        - Sacar el numero de alumnos aprobados
+        - Dado este array, sacar por pantalla todas las notas que no están repetidas
+        - Crea una funcion para comprobar las notas que estan por debajo de 5. Llama a esta función para sacar las notas pares de los alumnos que han suspendido
+        - Sacar las notas impares de los alumnos que han sacado al menos un 7
+        - Elimina del array las notas por debajo de 5
+        - Crea una función aleatoria que calcule numeros entre 5 y 10 sin decimales
+        - Llama a esta funcion aleatoria para rellenar el array, respetando las notas que no han sido eliminadas. 
+        - Muestra por pantalla el array con los nuevos elementos ordenandos de mayor a menor.
+    
+        NOTA1: Emplea siempre que se pueda metodos y propiedades del objeto Array
+        NOTA2: Emplea if, for, for-in, for-of, do-while, while... */
+
+        // Elemento resultado del HTML.
+        const r_calificaciones = document.getElementById("calificaciones");
+
+        // Definimos las notas.
+        var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8, 7.5, 1, 7.5, 8);
+
+        // Calculamos y mostramos el numero de alumnos aprobados.
+        let numAprobados = 0;
+        for (const nota of notas) {
+            if (nota >= 5) {
+                numAprobados++;
+            }
+        }
+
+        r_calificaciones.innerHTML += `<h3>Numero de alumnos aprobados:</h3>\n<p>${numAprobados}</p>`;
+
+        // Guardamos y mostramos todas las notas que no están repetidas.
+        let notasNoRepetidas = [];
+        for (const nota of notas) {
+            if (!notasNoRepetidas.includes(nota)) {
+                notasNoRepetidas.push(nota);
+            }
+        }
+
+        r_calificaciones.innerHTML += `<h3>Notas no repetidas:</h3>\n<p>${notasNoRepetidas}</p>`;
+
+        // Creamos una funcion para comprobar las notas que estan por debajo de 5.
+        function esSuspenso(nota) {
+            return nota < 5;
+        }
+
+        // Llamamos a esta función para guardar y mostrar las notas pares de los alumnos que han suspendido.
+        notasParesAlumnosSuspensos = [];
+        for (const nota of notas) {
+            if (esSuspenso(nota) && nota % 2 === 0) {
+                notasParesAlumnosSuspensos.push(nota);
+            }
+        }
+
+        r_calificaciones.innerHTML += `<h3>Notas pares de los alumnos suspensos:</h3>\n<p>${notasParesAlumnosSuspensos}</p>`;
+
+        // Sacar las notas impares de los alumnos que han sacado al menos un 7.
+        notasImparesMenosDe7 = [];
+        for (const nota of notas) {
+            if (nota >= 7 && nota % 2 !== 0) {
+                notasImparesMenosDe7.push(nota);
+            }
+        }
+
+        r_calificaciones.innerHTML += `<h3>Notas impares de los alumnos que han sacado al menos de un 7:</h3>\n<p>${notasImparesMenosDe7}</p>`;
+
+        // Eliminamos del array las notas por debajo de 5.
+        for (let i = 0; i < notas.length; i++) {
+            const nota = notas[i];
+            if (nota < 5) {
+                notas[i] = null;
+            }
+
+        }
+
+        // Creamos una función aleatoria que calcule numeros entre 5 y 10 sin decimales.
+        function aleatorio5a10() {
+            let num = (Math.random() * 5) + 5;
+            num = Math.round(num);
+            return num;
+        }
+
+        // Llamamos a esta funcion aleatoria para rellenar el array, respetando las notas que no han sido eliminadas. 
+        for (let i = 0; i < notas.length; i++) {
+            const nota = notas[i];
+            if (nota === null) {
+                notas[i] = aleatorio5a10();
+            }
+
+        }
+
+        // Mostramos por pantalla el array con los nuevos elementos ordenandos de mayor a menor.
+        notas.sort((a, b) => b - a);
+        r_calificaciones.innerHTML += `<h3>Notas ordenado despues de los cambios:</h3>\n<p>${notas}</p>`;
+
+    </script>
+</body>
+
+</html>

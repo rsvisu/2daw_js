@@ -1,0 +1,106 @@
+<!--
+Ejercicio: Simular un cajero, para ello crea un script en el que tengas 
+una función flecha y empleando parte del diseño de la calculadora: 
+- Te pide una contraseña o pin para entrar. Botón para validar. 
+- Botón para: Consultar el saldo disponible, previamente has tenido iniciar con el valor 10.000 €. 
+- Botón para: sacar dinero, comprobando que no supere el saldo disponible. 
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        #cajero {
+            border: 1px black solid;
+            width: fit-content;
+            padding: 10px;
+        }
+
+        #pantalla {
+            width: 100%;
+            height: 30px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        #cajero button {
+            width: 50px;
+            height: 30px;
+            margin: 1px;
+        }
+
+        #cajero button.relleno {
+            opacity: 0;
+        }
+
+        #cajero button.apretado {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        #cajero button.ampliado {
+            width: 162px;
+        }
+
+        #operaciones button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>Cajero:</h2>
+        <p>(clave: 2204)</p>
+        <div id="info">
+            <p style='color: red'>Debes loguearte!</p>
+        </div>
+        <div id="cajero">
+            <input type="text" id="pantalla" readonly>
+
+            <br>
+
+            <button onclick="anadirNumero('7')">7</button>
+            <button onclick="anadirNumero('8')">8</button>
+            <button onclick="anadirNumero('9')">9</button>
+
+            <br>
+
+            <button onclick="anadirNumero('4')">4</button>
+            <button onclick="anadirNumero('5')">5</button>
+            <button onclick="anadirNumero('6')">6</button>
+
+            <br>
+
+            <button onclick="anadirNumero('1')">1</button>
+            <button onclick="anadirNumero('2')">2</button>
+            <button onclick="anadirNumero('3')">3</button>
+
+            <br>
+
+            <button onclick="anadirNumero('0')">0</button>
+            <button onclick="borrar()">◄</button>
+            <button onclick="aceptar()">✓</button>
+
+            <div id="operaciones" style="display: none;">
+                <br>
+                <button onclick="consultarSaldo()" class="ampliado" id="consultarSaldo">Consultar saldo</button>
+                <br>
+                <button onclick="restarSaldo()" class="ampliado" id="restarSaldo">Restar saldo</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

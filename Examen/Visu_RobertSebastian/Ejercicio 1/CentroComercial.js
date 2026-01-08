@@ -1,0 +1,86 @@
+class CentroComercial {
+    // Atributos
+    nombre;
+    direccion;
+    plantas;
+
+    // Constructor
+    constructor(nombre, calle, numero, cp) {
+        // Atributos
+        this.nombre = nombre;
+        this.direccion = {
+            calle: calle,
+            numero: numero,
+            cp: cp
+        };
+        this.plantas = [];
+
+        // Aviso
+        console.log(`Construido nuevo centro comercial: ${nombre}, Calle: ${calle}, nº: ${numero}, CP: ${cp}`);
+    }
+
+    // Funciones:
+    // Agrega el numero de plantas y locales especificados.
+    agregarPlantasYLocales(numPlantas, numLocales) {
+        // Por cada planta agregamos un nuevo array a locales de tamaño numLocales
+        for (let i = 0; i < numPlantas; i++) {
+            this.plantas.push(new Array(numLocales));
+        }
+
+        // Aviso
+        console.log(`Agregamos ${numPlantas} plantas con ${numLocales} locales por planta.`);
+    }
+
+    // Modifica el nombre.
+    modificarNombre(nombre) {
+        this.nombre = nombre;
+    }
+
+    // Modifica la direccion. Espera un objeto con los atributos calle, numero y cp.
+    modificarDireccion(direccion) {
+        // Usamos el spread para cumplir con el enunciado, pero lo que hace es simplemente duplicar el objeto.
+        let spreadDireccion = { ...direccion };
+
+        // Reasignamos los valores de direccion.
+        this.direccion.calle = spreadDireccion.calle;
+        this.direccion.numero = spreadDireccion.numero;
+        this.direccion.cp = spreadDireccion.cp;
+    }
+
+    // Asigna una o varias tiendas a un numero de planta y local. 
+    // Espera un objeto con los atributos nombre, planta y local.
+    asignarTiendas(...tiendas) {
+        // Iteramos las tiendas del input.
+        for (const tienda of tiendas) {
+            // Variables
+            let nombre = tienda.nombre;
+            let numPlanta = tienda.planta;
+            let numLocal = tienda.local;
+
+            // Asignamos la tienda.
+            this.plantas[numPlanta - 1][numLocal - 1] = nombre;
+
+            // Aviso
+            console.log(`${nombre} es ahora la tienda del local ${numLocal} en planta ${numPlanta}.`);
+        }
+    }
+
+    // Imprime todos los locales de todas las plantas.
+    imprimeLocales() {
+        // Aviso
+        console.log(`Listado de tiendas del centro comercial ${this.nombre}.`);
+
+        // Iteramos las plantas.
+        for (let numPlanta = 0; numPlanta < this.plantas.length; numPlanta++) {
+            const planta = this.plantas[numPlanta];
+            // Iteramos los locales de la planta.
+            for (let numLocal = 0; numLocal < planta.length; numLocal++) {
+                const local = planta[numLocal];
+                // Aviso
+                console.log(`Tienda del local ${numLocal + 1} de la planta ${numPlanta + 1}: ${local || ""}`);
+            }
+        }
+    }
+}
+
+export { CentroComercial };
