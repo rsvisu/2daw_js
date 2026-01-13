@@ -1,0 +1,51 @@
+<!--
+Ejercicio 3: Realizar una aplicación que al mover el ratón en cualquier punto de la
+ventana del navegador, se muestre la posición del puntero respecto del navegador y
+respecto de la página: Información que se muestra para los eventos del ratón. Para
+mostrar los mensajes, utilizar la función muestraInformacion().
+
+Al pulsar cualquier tecla, el mensaje mostrado debe cambiar para indicar el nuevo
+evento y su información asociada: Información que se muestra para los eventos del
+teclado.
+
+Añadir la siguiente característica al script: cuando se pulsa un botón del ratón, el color
+de fondo del cuadro de mensaje debe ser amarillo (#FFFFCC) y cuando se pulsa una
+tecla, el color de fondo debe ser azul (#CCE6FF). Al volver a mover el ratón, el color de
+fondo vuelve a ser blanco. El color de fondo del cuadro de información cambia en
+función del tipo de evento
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+      body {
+        margin: 0;
+        height: 2000px;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #imagenes img {
+        width: 400px;
+        height: auto;
+      }
+    </style>
+</head>
+<body>
+    <main>
+      <div id="imagenes">
+        <h2>Ejercicio 3</h2>
+        <h4>Informacion:</h4>
+        <p id="resultado"></p>
+      </div>
+    </main>
+</body>
+</html>

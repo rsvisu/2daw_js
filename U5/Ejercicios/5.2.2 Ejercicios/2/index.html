@@ -1,0 +1,44 @@
+<!--
+Ejercicio 2: Coloca dos imágenes en pantalla: un coche y una moto. Crea un script para
+que al pasar el ratón por encima de las dos imágenes, las reconozca sacando por pantalla
+el texto “coche”, “moto” o “no reconoce ninguna imagen” según proceda en cada caso.
+
+Nota: Aplicando el evento onmouseover, para reconocer cada una de las imágenes,
+justo en el momento de pasar por encima el ratón. Emplear onmouseout para
+contemplar el caso en el que el ratón se encuentra fuera de ambas imágenes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #imagenes img {
+        width: 400px;
+        height: auto;
+      }
+    </style>
+</head>
+<body>
+    <main>
+      <div id="imagenes">
+        <h2>Ejercicio 2</h2>
+        <p id="resultado"></p>
+        <img id="img1" src="assets/carretera.jpg" alt="Carretera">
+        <img id="img2" src="assets/panda.png" alt="Panda">
+      </div>
+    </main>
+</body>
+</html>
