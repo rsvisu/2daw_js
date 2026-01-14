@@ -1,6 +1,6 @@
 // Main
 document.addEventListener("DOMContentLoaded", function () {
-    /*
+    /* - Version 1:
     // Divs
     let div_arriba_izquierda = document.getElementById("arriba_izquierda");
     let div_arriba_derecha = document.getElementById("arriba_derecha");
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     div_abajo_derecha.addEventListener("click", () => alert("Has clickado abajo a la derecha."));
     */
     
+    /* - Version 2: */
     // Recuperamos todos los cuadrantes
     let divs = document.getElementsByName("cuadrante");
     
