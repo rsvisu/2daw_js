@@ -1,0 +1,44 @@
+<!--
+Ejercicio 4: Crear un script que informe al usuario en que zona de la pantalla ha pulsado 
+el ratón. Las zonas definidas son las siguientes: izquierda arriba, izquierda abajo, derecha 
+arriba y derecha abajo.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+      }
+      div {
+        height: 50%;
+        width: 50%;
+        float: left;
+      }
+
+      #arriba_izquierda {
+        background-color: red;
+      }
+      #arriba_derecha {
+        background-color: green;
+      }
+      #abajo_izquierda {
+        background-color: blue;
+      }
+      #abajo_derecha {
+        background-color: orange;
+      }
+    </style>
+</head>
+<body>
+    <div id="arriba_izquierda" name="cuadrante"></div>
+    <div id="arriba_derecha" name="cuadrante"></div>
+    <div id="abajo_izquierda" name="cuadrante"></div>
+    <div id="abajo_derecha" name="cuadrante"></div>
+</body>
+</html>
