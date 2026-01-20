@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js"></script>
+    <style>
+        div {
+            padding: 50px;
+            color: white;
+        }
+
+        .abuelo {
+            background-color: red;
+        }
+
+        .padre {
+            background-color: green;
+        }
+
+        .hijo {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<h1>Captura</h1>
+<div id="captura">
+    <div class="abuelo">
+        <p>Abuelo</p>
+        <div class="padre">
+            <p>Padre</p>
+            <div class="hijo">
+                <p>Hijo</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>Burbujeo</h1>
+<div id="burbujeo">
+    <div class="abuelo">
+        <p>Abuelo</p>
+        <div class="padre">
+            <p>Padre</p>
+            <div class="hijo">
+                <p>Hijo</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>Mixto</h1>
+<div id="mixto">
+    <div class="abuelo">
+        <p>Abuelo (captura)</p>
+        <div class="padre">
+            <p>Padre (burbujeo)</p>
+            <div class="hijo">
+                <p>Hijo (burbujeo)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1>Parando propagación</h1>
+<div id="stop">
+    <div class="abuelo">
+        <p>Abuelo</p>
+        <div class="padre">
+            <p>Padre (aquí stop)</p>
+            <div class="hijo">
+                <p>Hijo</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
