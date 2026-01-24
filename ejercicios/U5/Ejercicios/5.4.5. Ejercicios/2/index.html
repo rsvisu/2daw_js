@@ -1,0 +1,89 @@
+<!--
+Ejercicio 2: En el formulario de la tarjeta de crédito añade un nuevo campo fecha de caducidad,
+un botón enviar que realice un submit y un manejador para el evento submit, que valide si la
+tarjeta se encuentra caducada. Al finalizar aparecerá un mensaje de "Tarjeta validada".
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        main {
+            margin: 10px;
+        }
+        div {
+            margin-bottom: 10px;
+        }
+
+        /* Popup */
+        #popups-container {
+            display: none;
+        }
+        #popups-container.open {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(0, 0, 0, 0.5);
+
+            position: fixed;
+            top: 0;
+            right: 0;
+
+            width: 100%;
+            height: 100%;
+        }
+        .popup-box {
+            display: none;
+        }
+        .popup-box.open {
+            display: block;
+            background: white;
+            color: black;
+            box-shadow: 1px 1px 10px black;
+            border-radius: 10px;
+            padding: 20px 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="popups-container">
+    <!--Popup tarjeta valida-->
+    <div class="popup-box" name="tarjeta_valida">
+        <h2>Tu tarjeta es valida!</h2>
+        <button onclick="cerrarPopup(this)">Cerrar</button>
+    </div>
+    <!--Popup tarjeta caducada-->
+    <div class="popup-box" name="tarjeta_caducada">
+        <h2>Tu tarjeta esta caducada :(</h2>
+        <button onclick="cerrarPopup(this)">Cerrar</button>
+    </div>
+</div>
+<main>
+    <form id="formulario">
+        <div>
+            <label>Introduce el numero de tu tarjeta de crédito: <br>
+                <input type="text" name="card[]" id="card4" required maxlength="4">
+                <input type="text" name="card[]" id="card8" required maxlength="4">
+                <input type="text" name="card[]" id="card12" required maxlength="4">
+                <input type="text" name="card[]" id="card16" required maxlength="4">
+            </label>
+        </div>
+        <div>
+            <label for="fecha_caducidad">Fecha de caducidad:</label><br>
+            <input type="date" name="fecha_caducidad" id="fecha_caducidad" required>
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</main>
+</body>
+</html>
