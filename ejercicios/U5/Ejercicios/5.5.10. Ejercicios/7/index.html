@@ -1,0 +1,63 @@
+<!--
+Ejemplo 7: Crea un formulario de subscripción de canal de prensa. Deben recogerse el
+nombre del usuario, NIF, correo electrónico y país de residencia.
+Realice las siguientes validaciones:
+El país de residencia debe ser España o Italia
+El correo electrónico debe ser de tipo Hotmail o yahoo.es
+El formato y número de Dni tiene que ser correcto
+Todos los campos son obligatorios completarlo.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Suscripción - Canal de Prensa</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        main {
+            margin: 10px;
+        }
+
+        form label {
+            display: block;
+        }
+
+        form button[type="submit"], form label {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <form id="formulario">
+        <label for="nombre">Nombre del usuario: <br>
+            <input type="text" name="nombre" id="nombre" required>
+        </label>
+        
+        <label for="dni">DNI: <br>
+            <input type="text" name="nif" id="dni" required placeholder="12345678Z">
+        </label>
+        
+        <label for="email">Correo electrónico: <br>
+            <input type="email" name="email" id="email" required placeholder="ejemplo@hotmail.com">
+        </label>
+        
+        <label for="pais">País de residencia: <br>
+            <select name="pais" id="pais" required>
+                <option value="">Selecciona un país</option>
+                <option value="espana">España</option>
+                <option value="italia">Italia</option>
+            </select>
+        </label>
+
+        <button type="submit">Suscribirse</button>
+    </form>
+</main>
+</body>
+</html>

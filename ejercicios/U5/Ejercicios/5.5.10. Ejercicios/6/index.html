@@ -1,0 +1,64 @@
+<!--
+Ejercicio 6: Crea un formulario que se solicite el alta a un nuevo alumno.
+Realice las siguientes validaciones: Lo grados solo tiene dos cursos (1o y 2o)
+No se admite un año académico mayor que el actual, ni de 5 dígitos.
+Todos los campos son obligatorios completarlo.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        main {
+            margin: 10px;
+        }
+
+        form label {
+            display: block;
+        }
+
+        form button[type="submit"], form label {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <form id="formulario">
+        <label for="nombre">Nombre: <br>
+            <input type="text" name="nombre" id="nombre">
+        </label>
+        <label for="apellido">Apellido: <br>
+            <input type="text" name="apellido" id="apellido">
+        </label>
+        <label for="titulacion">Titulacion: <br>
+            <select name="titulacion" id="titulacion">
+                <option value="default" selected disabled>Selecciona una opcion</option>
+                <option value="daw">Grado Superior de Desarrollo Web</option>
+                <option value="dam">Grado Superior de Desarrollo Multiplataforma</option>
+            </select>
+        </label>
+        <label for="curso">Curso: <br>
+            <select name="curso" id="curso">
+                <option value="default" selected disabled>Selecciona un curso</option>
+                <option value="1">1º</option>
+                <option value="2">2º</option>
+            </select>
+        </label>
+        <label for="anio">Año: <br>
+            <input type="number" name="anio" id="anio">
+        </label>
+
+        <button type="submit">Enviar</button>
+    </form>
+</main>
+</body>
+</html>

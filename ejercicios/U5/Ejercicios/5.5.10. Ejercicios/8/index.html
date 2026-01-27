@@ -1,0 +1,102 @@
+<!--
+Ejemplo 8: Documento con dos formularios.
+El primero con la información de alta del usuario: Nombre, Apellido, DNI, Email y
+Contraseña. Dichos datos se guardaran en la página del servidor alta.php.
+En el segundo formulario los datos bancarios: 24 dígitos, CVV (de 3 dígitos) y Clave.
+Dichos datos se guardarán en la página del servidor pasarelaPago.php.
+Nota:
+ Todos los campos son obligatorios.
+ Además de las validaciones de los campos Nombre, Apellido, emplea patrones
+para el DNI y el Email.
+ La contraseña esta compuesta por un número, letra, una mayúscula, minúscula,
+carácter alfanumérico y tener 8 caracteres como mínimo.
+ La clave serán 4 números.
+ Tanto la contraseña como la clave no podrán visualizarse por pantalla
+(Type=password).
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        main {
+            margin: 10px;
+        }
+
+        form {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        form label {
+            display: block;
+        }
+
+        form button[type="submit"], form label {
+            margin-top: 10px;
+        }
+
+        .titulo {
+            margin: 14px 0 6px;
+        }
+
+        small {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h2 class="titulo">Formulario de alta</h2>
+    <form id="formAlta" action="alta.php" method="post">
+        <label for="nombre">Nombre: <br>
+            <input type="text" name="nombre" id="nombre">
+        </label>
+
+        <label for="apellido">Apellido: <br>
+            <input type="text" name="apellido" id="apellido">
+        </label>
+
+        <label for="dni">DNI: <br>
+            <input type="text" name="dni" id="dni" placeholder="12345678Z">
+        </label>
+
+        <label for="email">Email: <br>
+            <input type="text" name="email" id="email" placeholder="ejemplo@hotmail.com">
+        </label>
+
+        <label for="contrasena">Contraseña: <br>
+            <input type="password" name="contrasena" id="contrasena">
+        </label>
+
+        <button type="submit">Enviar alta</button>
+    </form>
+
+    <h2 class="titulo">Datos bancarios</h2>
+    <form id="formPago" action="pasarelaPago.php" method="post">
+        <label for="tarjeta">Tarjeta (24 dígitos): <br>
+            <input type="text" name="tarjeta" id="tarjeta" inputmode="numeric" placeholder="1234...">
+        </label>
+
+        <label for="cvv">CVV (3 dígitos): <br>
+            <input type="text" name="cvv" id="cvv" inputmode="numeric" placeholder="123">
+        </label>
+
+        <label for="clave">Clave (4 números): <br>
+            <input type="password" name="clave" id="clave" inputmode="numeric" placeholder="1234">
+        </label>
+
+        <button type="submit">Pagar</button>
+    </form>
+</main>
+</body>
+</html>
