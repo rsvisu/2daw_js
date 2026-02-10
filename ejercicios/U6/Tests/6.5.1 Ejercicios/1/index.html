@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+</body>
+<script>
+    // Creamos una tabla de 3 filas y 5 columnas
+    // Creamos la tabla vacía:
+    let miTabla = document.createElement("table");
+    let tablaBody = document.createElement("tbody");
+    // Creamos las filas
+    for (let i = 0; i < 3; i++) {
+        let fila = document.createElement("tr");
+        // Dentro de cada fila, creamos las columas
+        for (let i = 0; i < 5; i++) {
+            let columna = document.createElement("td");
+            // Y cada columna creada la vinculamos a la fila
+            fila.appendChild(columna);
+        }
+        // Vinculamos nuestra fila con sus celdas, al cuerpo de la tabla
+        tablaBody.appendChild(fila);
+    }
+    // Por último, vinculamos el tbody a la tabla, y la tabla a la página
+    miTabla.appendChild(tablaBody);
+    document.body.appendChild(miTabla);
+    miTabla.setAttribute("border", "2");
+</script>
+</html>

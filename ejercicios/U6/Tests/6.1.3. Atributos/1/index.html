@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="introduccion" style="color: blue">Parrafo de prueba</p>
+</body>
+<script>
+    let p = document.getElementById("introduccion");
+
+    let valorElId = p.attributes.getNamedItem("id").nodeValue; // elId = "introduccion"
+    let elId = p.attributes.item(0).nodeValue; // elId = "introduccion"
+    p.attributes.getNamedItem("id").nodeValue = "preintroduccion";
+
+    let atributo = document.createAttribute("lang"); // atributo lang
+    atributo.nodeValue = "es"; // lang=”es”
+    p.attributes.setNamedItem(atributo);
+
+    console.log(elId);
+    console.log(valorElId);
+    console.log(p);
+    console.log(atributo);
+</script>
+</html>
